@@ -11,6 +11,15 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller {
 
+    // public function tes() {
+    //     $user = User::latest()->get();
+
+    //     return response()->json([
+    //         'data' => $user,
+    //         'token_type' => 'Bearer',
+    //     ]);
+    // }
+
     public function register(Request $request) {
         $validateData = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
