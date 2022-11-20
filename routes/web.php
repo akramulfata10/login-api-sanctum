@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/view', [\App\Http\Controllers\UserController::class, 'tes']);
+// Route::get('/view', [\App\Http\Controllers\UserController::class, 'tes']);
