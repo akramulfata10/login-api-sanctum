@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::post('/registrasi-user', [\App\Http\Controllers\Api\AuthController::class, 'register']);
 Route::post('/login-user', [\App\Http\Controllers\Api\AuthController::class, 'login']);
 
+// Route::resource('/categories', \App\Http\Controllers\Api\CategoryController::class);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -24,4 +26,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [\App\Http\Controllers\Api\AuthController::class, 'logout']);
     Route::resource('/posts', \App\Http\Controllers\Api\PostController::class);
+    Route::resource('/categories', \App\Http\Controllers\Api\CategoryController::class);
 });
